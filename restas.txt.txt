@@ -1,0 +1,21 @@
+1) por un conjunto de tablas y archivos
+2) es una disposicion de datos en filas y columnas
+3) se creata escribiendo CREATE DATABASE "nombre"
+4) nombre: VARCHAR  numero: int
+5) CREATE TABLE equis 	con create table creamos la tabla y "equis" es el nombre, puede ser ambos
+6) INSERT INTO
+7) SELECT * FROM personas
+8) UPDATE personas SET nombre= "Flavio" WHERE dni = 14235234
+   UPDATE personas SET nombre= "Pablo" WHERE edad = 80
+   UPDATE personas SET direccion = "Balbin" WHERE apellido = "Equis"
+   DELETE FROM personas WHERE apellido = "Gamboa"
+   SELECT * FROM personas WHERE edad>17
+   SELECT * FROM personas WHERE edad>17, nombre = "Roberto"
+   SELECT * FROM personas nombre WHERE apellido = "Equis"
+   SELECT * FROM personas edad WHERE apellido = "Equis"
+   SELECT * FROM personas edad<17 WHERE apellido = "Equis"
+
+Extra: ALTER TABLE personas ADD direccion VARCHAR
+   
+   
+   
