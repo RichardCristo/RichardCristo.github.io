@@ -1,0 +1,18 @@
+1) esta compuesta por una tabla y datos
+2) una tabla es una disposicion de datos en el que se encuentran filas y columnas
+3) CREATE DATABASE equis
+4) VARCHAR nombre   numeros int
+5) CREATE TABLE equis   CREATE TABLE para crear la tabla y equis es el nombre que le asigne
+6) INSERT INTO
+7) SELECT * FROM nombre de la tabla
+8) a- UPDATE nombre de la tabla SET nombre = "Favio" WHERE dni = 14235234
+   b- UPDATE nombre de la tabla SET nombre = "Pablo" WHERE edad = 80
+   c- UPDATE nombre de la tabla SET direccion = "Balbin" WHERE apellido = "Equis"
+   d- DELETE FROM nombre de la tabla WHERE apellido = "Equis"
+   e- SELECT * FROM nombre de la tabla WHERE edad>17
+   f- SELECT * FROM nombre de la tabla WHERE edad>17, nombre = "Roberto"
+   g- SELECT * FROM nombre de la tabla nombre WHERE apellidos = "Equis"
+   h- SELECT * FROM nombre de la tabla edad WHERE apellidos = "Equis"
+   i- SELECT * FROM nombre de la tabla edad<18 WHERE apellidos = "Equis"
+
+Extra: ALTER TABLE nombre de la tabla ADD 
