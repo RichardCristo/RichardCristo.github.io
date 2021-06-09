@@ -1,0 +1,11 @@
+CREATE DATABASE sucursales;
+USE sucursales;
+CREATE TABLE empleados (id_empleado int, id_departamento int, puesto VARCHAR(50), nombre VARCHAR(50), apellido VARCHAR(50), dni VARCHAR(50), salario int);
+CREATE TABLE departamentos (id_departamento int, nombre VARCHAR(50), cant_empleados int, nombre_direc_departamento VARCHAR(50));
+INSERT INTO empleados (id_empleado, id_departamento, puesto, nombre, apellido, dni, salario) VALUES ( 01, 01, "vendedor", "David", "Austin", 46123569, 21.000),( 02, 01, "vendedor", "Augustin", "Diegonez", 46254788, 25.000),( 03, 02, "CM", "Tadeo", "Gutierrez", 42123569, 24.000),( 04, 02, "CM", "Laura", "Radich", 42435612, 26.000),( 05, 03, "contador", "Angela", "Gomez", 41123569, 25.000),( 06, 03, "contador", "Facundo", "Corleone", 41390648, 27.000),( 07, 04, "informatico", "Jeronimo", "Benavidez", 40123569, 21.000),( 08, 04, "infotmatico", "Nina", "Molina", 40749025, 30.000),( 09, 01, "vendedor", "Marias", "Rodriguez", 39123569, 31.000),( 10, 02, "CM", "Federico", "Montiel", 45723013, 30.000);
+INSERT INTO departamentos (id_departamento, nombre, cant_empleados, nombre_direc_departamento) VALUES (01, "ventas", 3, "Javier"), (02, "marketing", 3, "Milena"), (03, "finanzas", 2, "Diego"), (04, "sistemas", 2, "Sandra");
+SELECT * FROM empleados WHERE puesto = "CM";
+SELECT * FROM empleados WHERE salario < (SELECT AVG(salario) FROM empleados);
+SELECT * FROM empleados WHERE salario < (SELECT AVG(salario) FROM empleados WHERE puesto = "vendedor");
+SELECT * FROM empleados WHERE puesto = "vendedor";
+SELECT * FROM empleados WHERE (SELECT id_departamentos FROM departamentos WHERE id_departamentos = 4);
