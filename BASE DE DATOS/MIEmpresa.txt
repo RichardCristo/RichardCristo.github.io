@@ -1,0 +1,17 @@
+CREATE DATABASE MIEmpresa;
+USE MIEmpresa;
+CREATE TABLE empleados (DNI int, Apellido VARCHAR(50), Nombre VARCHAR(50), Domicilio VARCHAR(50), Sector VARCHAR(50), Telefono int, Nro_Interno int, Celurar int, Estado_Civil VARCHAR(50), Hijos int, Fecha_Nacimiento DATE, Fecha_Ingreso DATE);
+CREATE TABLE sueldo (Basico VARCHAR(50), Retenciones VARCHAR(50), Asignaciones VARCHAR(50), Comisiones VARCHAR(50), Mes VARCHAR(50), Sueldo_Neto int);
+CREATE TABLE productos (Descripcion VARCHAR(50), Stock VARCHAR(50), Stock_minimo int, Precio_Costo int, Precio_Venta int, Demora_Entrega VARCHAR(50));
+CREATE TABLE control_horas (Fecha DATE, Hora_Inicio DATETIME, Hora_Fin DATETIME);
+INSERT INTO empleados (DNI, Apellido, Nombre, Domicilio, Sector, Telefono, Nro_Interno, Celurar, Estado_Civil, Hijos, Fecha_Nacimiento, Fecha_Ingreso) VALUES (46123569, "Reale", "Facundo", "Nuñez 5272", "A", 2622-0409, 001, 2622-0409, "Soltero", 0, 1999-08-04, 2016-06-16),(46124579, "Varela", "Ramiro", "Medeyros 5272", "A", 3133-6649, 002, 3133-6649, "Casado", 0, 1999-12-11, 2016-06-16),(46125571, "Salvatori", "Santino", "Altolaguirre 5272", "B", 3569-6184, 003, 3569-6184, "Divorciado", 1, 2000-05-19, 2016-06-16),(45123569, "Estevez", "Mia", "Capdevila 5272", "B", 2723-0308, 004, 2723-0308, "Soltera", 0, 1999-04-29, 2013-04-18),(46458792, "Gutierrez", "Alma", "Galvan 5272", "C", 2521-0510, 005, 2521-0510, "Pareja", 0, 1999-08-04, 2010-06-16); 
+INSERT INTO sueldo (Basico, Retenciones, Asignaciones, Comisiones, Mes, Sueldo_Neto ) VALUES (21.600, 400, 0, 1.000, "Agosto", 22.200), (21.600, 400, 0, 1.000, "Diciembre", 22.200),(21.600, 400, 945, 1.000, "Mayo", 23.145),(24.600, 400, 945, 1.000, "Agosto", 25.200),(25.600, 400, 0, 1.000, "Agosto", 26.200);
+INSERT INTO productos (Descripcion, Stock, Stock_minimo, Precio_Costo, Precio_Venta, Demora_Entrega) VALUES ("teclado", "50", "1", 500, 1000, "un dia"), ("mouse", "50", "1", 400, 800, "dos dias"),("auriculares", "50", "1", 600, 1200, "tres dias"),("gabinete", "50", "1", 700, 1400, "cuatro dias"),("pad", "50", "1", 200, 400, "cinco dias");
+INSERT INTO control_horas (Fecha, Hora_Inicio, Hora_Fin) VALUES (2021-06-16, "2021-06-16 09:00:00", "2021-06-16 17:00:00"),(2021-06-16, "2021-06-16 09:00:00", "2021-06-16 17:00:00"),(2021-06-16, "2021-06-16 09:00:00", "2021-06-16 17:00:00"),(2021-06-16, "2021-06-16 09:00:00", "2021-06-16 17:00:00"),(2021-06-16, "2021-06-16 09:00:00", "2021-06-16 17:00:00");
+SELECT DATE FROM empleados WHERE Fecha_Ingreso = "1995-MM-DD";
+SELECT DATE FROM empleados WHERE Fecha_Nacimiento = "YYYY-10-DD";
+SELECT DATE FROM empleados WHERE Fecha_Nacimiento < "YYYY-01-16";
+SELECT Fecha_Ingreso FROM empleados;
+SELECT Descripcion FROM productos;
+SELECT DATEDIFF("2021-06-16", 2021-08-04);
+SELECT DATEDIFF ("2021-06-16", 2021-12-11);
