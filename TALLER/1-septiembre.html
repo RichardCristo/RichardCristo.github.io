@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>1-septiembre</title>
+</head>
+
+<body>
+    <p> Ingrese un arreglo: </p>
+    <input type="text" id="arreglo">
+
+    <p> Ingrese un numero: </p>
+    <input type="number" id="numero">
+
+    <br>
+
+    <button onclick="mostrarDatos()"> Cuantas veces esta el numero en el arreglo? </button>
+
+    <p id="datosIngresados"><p>
+
+    <script>
+
+        var A = " ";
+        var N = 0;
+
+        function mostrarDatos() {
+         document.getElementById("arreglo").value = A;
+         document.getElementById("numero").value = N;
+        let cont = 0;
+        for(let i = 0; i < A.length; i++){
+          if(A[i] == N){
+            cont ++;
+             }
+           }
+         
+         document.getElementById("datosIngresados").innerHTML = cont;
+        }
+    
+    </script>
+</body>
+
+</html>
