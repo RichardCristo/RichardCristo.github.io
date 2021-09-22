@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="ejemplo.js"></script>
+        <title>8-septiembre</title>
+    </head>
+
+    <body>
+        <p> CALCULADORA </p>
+
+        <p>Ingrese un numero:</p>
+        <input type="number" id="n1">
+
+        <p>Ingrese otro numero:</p>
+        <input type="number" id="n2">
+
+        <br>
+
+        
+        <button onclick="suma()"> + </button>
+
+        <button onclick="resta()"> - </button>
+
+        <button onclick="division()"> / </button>
+
+        <button onclick="multiplicacion()"> * </button>
+
+        <p id="datosIngresados"><p>
+        
+        <script>
+            
+            function suma() {
+                let n1 = document.getElementById("n1").value;
+                let n2 = document.getElementById("n2").value;
+                let resultado = parseInt(n1) + parseInt(n2);
+                document.getElementById("datosIngresados").innerHTML = resultado;
+            }
+
+            function resta() {
+                let n1 = document.getElementById("n1").value;
+                let n2 = document.getElementById("n2").value;
+                let resultado = n1 - n2;
+                document.getElementById("datosIngresados").innerHTML = resultado;
+            }
+
+            function division() {
+                let n1 = document.getElementById("n1").value;
+                let n2 = document.getElementById("n2").value;
+                let resultado = n1 / n2;
+                document.getElementById("datosIngresados").innerHTML = resultado;
+                if(n2 == 0){
+                    document.getElementById("datosIngresados").innerHTML = "ERROR";
+                }
+            }
+
+            function multiplicacion(){
+                let n1 = document.getElementById("n1").value;
+                let n2 = document.getElementById("n2").value;
+                let resultado = n1 * n2;
+                document.getElementById("datosIngresados").innerHTML = resultado;
+            }
+
+        </script>
+    </body>
+
+</html>
