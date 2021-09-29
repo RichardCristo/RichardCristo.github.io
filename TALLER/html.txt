@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+     <img src="logo_P.png"  id="logo">
+     <rigth>
+       <form>
+        <button class="boton">Combos</button>
+        <button class="boton">Menu</button>
+        <button class="boton">Locales</button>
+        <button class="boton">Contactenos</button>
+      </form>
+     </rigth>
+     
+     <div id = "combo1"> 
+      <img src="veganashe.jpg" alt = "hamburguesa vegana" class = "combos" > 
+    
+     </div>
+      
+      <div id = "combo2">
+       <img src="clasicacomplete.jpg" alt = "hamburguesa clasica" class = "combos"> 
+    
+      </div>
+    
+      <div id = "combo3">
+       <img src="nashefinalform.jpg" alt = "hamburguesa con queso" class = "combos"> 
+      
+      </div>
+      
+     <div id = "combo4">
+      <img src="doblenashe.jpg" alt = "hamburguesa doble con queso" class = "combos"> 
+
+     </div>
+      
+    <div id = "combo5">
+      <img src="finalpollo.jpg" alt = "hamburguesa de pollo" class = "combos"> 
+
+    </div>
+      
+    </body>
+<html>
