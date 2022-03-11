@@ -1,0 +1,23 @@
+select id_pedido, descripcion, id_cliente, fecha_compra, dscuento from pedidos where fecha_entrega between "2017-07-01" and "2017-07-31" order by fecha desc;
+
+select producto, detallepedido.id_pedido from productos where codigo in(select codigo_producto);
+
+select * from pedidos where descuento > 10;
+
+select cantidad, codigo_producto from detallepedido;
+
+update clientes set telefono = 45224556, email = facu@gmail.com where id_cliente = 1;
+
+select id_pedido, cantidad from pedidos where cantidad > 3;
+
+select id_pedido, id_cliente from pedidos where descuento = 5 or descuento = 10 
+or descuento = 15;
+
+delete from clientes where fecha_alta = "1999-01-23";
+
+insert into clientes (nombre, apellido, direccion, telefono, email, fecha_alta);
+
+select sum(precio_venta) from detalelpedido where id_pedido;
+ 
+
+ 
