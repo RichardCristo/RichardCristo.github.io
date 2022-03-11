@@ -1,0 +1,21 @@
+delete from alumno where dni= 4285014;
+
+update notas set id_nota = 6 where id_alumo = and id_materia = 8;
+
+select nombre, cant_horas, aula from materias where curso = "3c" order by nombre;
+
+delete from alumnos where curso =  "6c";
+
+update alumno set curso = "5c" where curso = "4c";
+
+select dbi , nombre, fecha_de_nacimiento from alumnos where curso = "4c" order by fecha_de_nacimiento desc;
+
+drop table notas;
+
+select max(1_trim) from noats where id_materia = 2;
+
+select avg(diciembre) from notas where id_materia = 3;
+
+insert into alumnos (dni, nombre, direccion, telefono, curso, fecha_de_nacimiento) values (46123569, "facundo reale", "nuñez 5272", "5c", "2004-08-04"; 
+
+ 
