@@ -1,0 +1,20 @@
+escritor: id_escritor pk
+libros: id_libro pk
+poema: id_poema pk  id_escritor fk
+poema_libro: ambas fk
+insert into escritor (nombre, apellido, direccion) values ("Facundo", "Reale", "Nuñez");
+
+update poema set titulo = "mis mejores poemas", descripcion = "Una seleccion de los mejores poemas del autor" where id_poema = 1;
+
+delete from libro where id_libro = 10;
+
+select max(precio) from libros;
+
+select min(precio), avg(precio) from libros;
+
+select id_libro, count(id_poema) from poema_libro group by id_libro;
+
+select nombre, apellido, descripcion, titulo from escritor inner join poema on escritor.id_escritor;
+
+select libros.titulo, poema.titulo, descripcion from poema inner join poema_libro on poema_libro.id_poema = poema_libro inner join libros on poema.id_libro = libros.id_libro;
+
