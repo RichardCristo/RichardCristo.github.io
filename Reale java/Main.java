@@ -2,53 +2,52 @@ package com.company;
 
 import java.util.Scanner;
 
-class Main{
+import java.util.ArrayList;
+
+public class Main {
+    public static void funcion(ArrayList<Producto> lista_productos){
+        float precio_aux = 0;
+        for(int i = 0; i < lista_productos.size(); i++){
+            Producto aux = lista_productos.get(i);
+            precio_aux += aux.getPrecio();
+        }
+        System.out.println("El importe a pagar es: " + precio_aux);
+    }
     public static void main(String[] args) {
-        System.out.println("Ingrese un DNI");
-        Scanner ingreso1 = new Scanner(System.in);
-        int dni = ingreso1.nextInt();
+       boolean dato = true;
+        ArrayList<Producto> lista_productos = new ArrayList<>();
 
-        System.out.println("Ingrese un nombre");
-        Scanner ingreso2 = new Scanner(System.in);
-        String nombre = ingreso2.nextLine();
+        while(dato){
+            System.out.println("1.REGISTRO");
+            System.out.println("2.IMPORTE PARCIAL A PAGAR");
+            System.out.println("3.IMPORTE TOTAL A PAGAR");
+            int fufu;
+            Scanner ingreso1 = new Scanner(System.in);
+            fufu = ingreso1.nextInt();
 
-        System.out.println("Ingrese una direccion");
-        Scanner ingreso3 = new Scanner(System.in);
-        String direccion = ingreso3.nextLine();
+            Producto p1 = new Producto();
 
-        Ingreso_datos p1 = new Ingreso_datos();
-        p1.setDni(dni);
-        System.out.println(p1.getDni());
-        p1.setNombre(nombre);
-        System.out.println(p1.getNombre());
-        p1.setDireccion(direccion);
-        System.out.println(p1.getDireccion());
+            if(fufu == 1){
 
-        System.out.println("Queres cambair los datos? (1 si 2 no)");
-        Scanner ingreso4 = new Scanner(System.in);
-        int dato = ingreso4.nextInt();
-        if (dato == 1) {
-            System.out.println("Ingrese un DNI");
-            Scanner ingreso5 = new Scanner(System.in);
-            int dni2 = ingreso5.nextInt();
+                System.out.println("Ingrese le nombre y precio del producto");
+                Scanner ingreso2 = new Scanner(System.in);
+                String nombre = ingreso2.nextLine();
+                Scanner ingreso3 = new Scanner(System.in);
+                float precio = ingreso3.nextFloat();
 
-            System.out.println("Ingrese un nombre");
-            Scanner ingreso6 = new Scanner(System.in);
-            String nombre2 = ingreso6.nextLine();
+                p1.setNombre(nombre);
+                p1.setPrecio(precio);
+                lista_productos.add(p1);
+            }
 
-            System.out.println("Ingrese una direccion");
-            Scanner ingreso7 = new Scanner(System.in);
-            String direccion2 = ingreso7.nextLine();
-            p1.setDni(dni2);
-            System.out.println(p1.getDni());
-            p1.setNombre(nombre2);
-            System.out.println(p1.getNombre());
-            p1.setDireccion(direccion2);
-            System.out.println(p1.getDireccion());
+            if(fufu == 2){
+               funcion(lista_productos);
+            }
+
+            if(fufu == 3){
+                funcion(lista_productos);
+                dato = false;
+            }
         }
-        else{
-            System.out.println("PAPU LINCE :V");
-        }
-
     }
 }
