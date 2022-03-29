@@ -1,0 +1,220 @@
+import com.company.Personas;
+
+import java.util.ArrayList;
+
+import java.util.Scanner;
+
+public class Sistema {
+    private ArrayList<Personas> personasRegistradas = new ArrayList<>();
+
+    public ArrayList<Personas> getPersonasRegistradas() {
+        return personasRegistradas;
+    }
+
+    public void setPersonasRegistradas(ArrayList<Personas> personasRegistradas) {
+        this.personasRegistradas = personasRegistradas;
+    }
+
+    public static void main(String[] args){
+        boolean dato = true;
+
+        while (dato) {
+            System.out.println("1.REGISTRO");
+            System.out.println("2.ELIMINAR PERSONA");
+            System.out.println("3.MODIFICAR DATOS");
+            System.out.println("4.PERSONAS MAYOR A 18");
+            System.out.println("5.PERSONAS REGISTRADAS");
+            System.out.println("6.SALIR");
+            int fufu;
+            Scanner ingreso_fufu = new Scanner(System.in);
+            fufu = ingreso_fufu.nextInt();
+            Sistema miSistema = new Sistema();
+            Personas p1 = new Personas();
+            if (fufu == 1) {
+                System.out.println("Ingrese el nombre");
+                Scanner ingreso_nombre = new Scanner(System.in);
+                String nombre = ingreso_nombre.nextLine();
+                System.out.println("Ingrese al edad");
+                Scanner ingreso_edad = new Scanner(System.in);
+                int edad = ingreso_edad.nextInt();
+                System.out.println("Ingrese el dni");
+                Scanner ingreso_dni = new Scanner(System.in);
+                int dni = ingreso_dni.nextInt();
+                System.out.println("Ingrese el telefono");
+                Scanner ingreso_telefono = new Scanner(System.in);
+                int telefono = ingreso_telefono.nextInt();
+                System.out.println("Ingrese la direccion");
+                Scanner ingreso_direccion = new Scanner(System.in);
+                String direccion = ingreso_direccion.nextLine();
+
+                p1.setNombre(nombre);
+                p1.setEdad(edad);
+                p1.setDni(dni);
+                p1.setTelefono(telefono);
+                p1.setDireccion(direccion);
+                miSistema.personasRegistradas.add(p1);
+
+                for(Personas nueva_persona : miSistema.personasRegistradas){
+                    System.out.println(nueva_persona.getNombre());
+                    System.out.println(nueva_persona.getEdad());
+                    System.out.println(nueva_persona.getDni());
+                    System.out.println(nueva_persona.getTelefono());
+                    System.out.println(nueva_persona.getDireccion());
+                }
+
+            }
+
+            if (fufu == 2) {
+                System.out.println("Ingrese el dni de la persona que quiere eliminar");
+                Scanner dni_eliminar_ingreso = new Scanner(System.in);
+                int dni_eliminar = dni_eliminar_ingreso.nextInt();
+                int cont = 0;
+                for(Personas nueva_persona : miSistema.personasRegistradas){
+                    if(dni_eliminar == nueva_persona.getDni()){
+                        miSistema.personasRegistradas.remove(cont);
+
+                    }
+                    cont ++;
+                }
+                cont = 0;
+            }
+            if (fufu == 3) {
+                System.out.println("Que quiere modificar?");
+                System.out.println("1.Nombre");
+                System.out.println("2.Edad");
+                System.out.println("3.Dni");
+                System.out.println("4.Telefono");
+                System.out.println("5.Direccion");
+                int modificar;
+                Scanner ingreso_modificar = new Scanner(System.in);
+                modificar = ingreso_modificar.nextInt();
+
+                if(modificar == 1){
+                    System.out.println("Ingresar el dni de la persona");
+                    int dni_persona;
+                    Scanner dni_persona_jeje = new Scanner(System.in);
+                    dni_persona = dni_persona_jeje.nextInt();
+                    System.out.println("Ingresar un nuevo nombre");
+                    String nuevo_nombre;
+                    Scanner ingreso_nuevo_nombre = new Scanner(System.in);
+                    nuevo_nombre = ingreso_nuevo_nombre.nextLine();
+                    int cont = 0;
+                    for(Personas nueva_persona : miSistema.personasRegistradas){
+                        if(dni_persona == nueva_persona.getDni()){
+                            miSistema.personasRegistradas.get(cont).setNombre(nuevo_nombre);
+
+                        }
+                        cont ++;
+                    }
+                    cont = 0;
+                }
+                if(modificar == 2){
+                    System.out.println("Ingresar el dni de la persona");
+                    int dni_persona2;
+                    Scanner dni_persona_jeje2 = new Scanner(System.in);
+                    dni_persona2 = dni_persona_jeje2.nextInt();
+                    System.out.println("Ingresar una nueva edad");
+                    int nuevo_edad;
+                    Scanner ingreso_nuevo_edad = new Scanner(System.in);
+                    nuevo_edad = ingreso_nuevo_edad.nextInt();
+                    int cont = 0;
+                    for(Personas nueva_persona : miSistema.personasRegistradas){
+                        if(dni_persona2 == nueva_persona.getDni()){
+                            miSistema.personasRegistradas.get(cont).setEdad(nuevo_edad);
+
+                        }
+                        cont ++;
+                    }
+                    cont = 0;
+
+                }
+                if(modificar == 3){
+                    System.out.println("Ingresar el dni de la persona");
+                    int dni_persona4;
+                    Scanner dni_persona_jeje4 = new Scanner(System.in);
+                    dni_persona4 = dni_persona_jeje4.nextInt();
+                    System.out.println("Ingresar un nuevo dni");
+                    int nuevo_dni;
+                    Scanner ingreso_nuevo_dni = new Scanner(System.in);
+                    nuevo_dni = ingreso_nuevo_dni.nextInt();
+                    int cont = 0;
+                    for(Personas nueva_persona : miSistema.personasRegistradas){
+                        if(dni_persona4 == nueva_persona.getDni()){
+                            miSistema.personasRegistradas.get(cont).setDni(nuevo_dni);
+
+                        }
+                        cont ++;
+                    }
+                    cont = 0;
+
+                }
+                if(modificar == 4){
+                    System.out.println("Ingresar el dni de la persona");
+                    int dni_persona5;
+                    Scanner dni_persona_jeje5 = new Scanner(System.in);
+                    dni_persona5 = dni_persona_jeje5.nextInt();
+                    System.out.println("Ingresar un nuevo telefono");
+                    int nuevo_telefono;
+                    Scanner ingreso_nuevo_telefono = new Scanner(System.in);
+                    nuevo_telefono = ingreso_nuevo_telefono.nextInt();
+
+                    for(Personas nueva_persona : miSistema.personasRegistradas){
+                        if(dni_persona5 == nueva_persona.getDni()){
+                            nueva_persona.setTelefono(nuevo_telefono);
+                        }
+
+                    }
+
+
+                }
+                if(modificar == 5){
+                    System.out.println("Ingresar el dni de la persona");
+                    int dni_persona6;
+                    Scanner dni_persona_jeje6 = new Scanner(System.in);
+                    dni_persona6 = dni_persona_jeje6.nextInt();
+                    System.out.println("Ingresar una direccion");
+                    String nuevo_direccion;
+                    Scanner ingreso_nuevo_direccion = new Scanner(System.in);
+                    nuevo_direccion = ingreso_nuevo_direccion.nextLine();
+                    int cont = 0;
+                    for(Personas nueva_persona : miSistema.personasRegistradas){
+                        if(dni_persona6 == nueva_persona.getDni()){
+                            miSistema.personasRegistradas.get(cont).setDireccion(nuevo_direccion);
+
+                        }
+                        cont ++;
+                    }
+                    cont = 0;
+                }
+
+
+            }
+            if (fufu == 4) {
+                int cont = 0;
+                for(Personas nueva_persona : miSistema.personasRegistradas){
+                    if(miSistema.personasRegistradas.get(cont).getEdad() > 17){
+                        System.out.println(nueva_persona.getNombre());
+                    }
+                    cont ++;
+                }
+                cont = 0;
+            }
+            if (fufu == 5) {
+
+                for(Personas nueva_persona : miSistema.personasRegistradas){
+                    System.out.println(nueva_persona.getNombre());
+                    System.out.println(nueva_persona.getEdad());
+                    System.out.println(nueva_persona.getDni());
+                    System.out.println(nueva_persona.getTelefono());
+                    System.out.println(nueva_persona.getDireccion());
+                }
+
+            }
+            if (fufu == 6) {
+                System.out.println("bye!");
+                dato = false;
+            }
+        }
+    }
+
+    }
