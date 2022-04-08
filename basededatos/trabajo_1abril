@@ -1,0 +1,46 @@
+DELIMITER //
+
+CREATE PROCEDURE obtenerClientes()
+BEGIN
+SELECT * FROM clientes;
+END //
+
+DELIMITER ;
+
+CALL obtenerClientes();
+
+DELIMITER //
+
+CREATE PROCEDURE obtenerProductos()
+BEGIN
+SELECT * FROM productos;
+END //
+
+DELIMITER ;
+
+CALL obtenerProductos();
+
+DELIMITER //
+CREATE PROCEDURE imprimirDatos(IN id int)
+BEGIN
+SELECT * FROM clientes WHERE id = id_cliente;
+END //
+
+DELIMITER ;
+
+CALL imprimirDatos(2);
+
+DELIMITER //
+
+CREATE PROCEDURE clientes_id_mayor_2()
+BEGIN
+SELECT * FROM clientes WHERE id_cliente > 2;
+END //
+
+DELIMITER ;
+
+CALL clientes_id_mayor_2();
+
+
+
+
