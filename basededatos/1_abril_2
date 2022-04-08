@@ -1,0 +1,62 @@
+DELIMITER $$
+CREATE PROCEDURE area(INOUT base INT,IN altura INT)
+BEGIN
+	SET base = base * altura;
+END$$
+
+
+CREATE PROCEDURE calcular_area()
+BEGIN
+    DECLARE base INT;
+	SET base = 2;
+	CALL area(valor,2); 
+	SELECT base;
+END$$
+
+DELIMITER ;
+
+CALL calcular_area();  
+
+DELIMITER $$
+
+CREATE PROCEDURE tipoDeNumero(IN valor_ingresado INT)
+BEGIN
+    DECLARE respuesta VARCHAR(100);
+    IF (valor_ingresado > 0) THEN
+    	SET respuesta = 'es positivo';
+    ELSE 
+    	SET respuesta = "es negativo";
+    ELSEIF (valor_ingresado > 100)
+    	SET respuesta = "es mayor a 100";
+    ELSE
+    	SET respuesta = "es menor a 100";
+    END IF;
+    SELECT respuesta;
+END $$
+
+CALL tipoDeNumero(-1);
+
+DELIMITER $$
+CREATE PROCEDURE incrementar(INOUT valor INT,IN incremento INT)
+BEGIN
+	SET valor = valor + incremento;
+END$$
+CREATE PROCEDURE promedio(INOUT promedio INT,IN valor INT)
+BEGIN
+	SET promedio = valor/3;
+END$$
+
+
+CREATE PROCEDURE prueba()
+BEGIN
+    DECLARE valor INT;
+	SET valor = 1;
+	CALL incrementar(valor,1); -- 2
+	CALL incrementar(valor,1); -- 3
+	call promedio()
+	SELECT valor; -- 8
+END$$
+
+DELIMITER ;
+
+CALL prueba();  
