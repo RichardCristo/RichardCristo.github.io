@@ -1,0 +1,86 @@
+create database MiEmpresa;
+
+use MiEmpresa;
+
+ceatre table empleado(
+	dni int not null,
+	apellido varchar(20),
+	nombre varchar,
+	telefono_particular,
+	nro_de_interno int,
+	celular int,
+	estado_civil varchar(10),
+	hijos int,
+	nacimiento date,
+	ingreso date
+);
+
+create table sueldo(
+	basico decimal,
+	retenciones decimal,
+	asignaciones decimal,
+	comisiones decimal,
+	mes int,
+	sueldo_neto decimal	
+);
+
+create table producto(
+	id_producto int not null auto_increment ,
+	descripcion varchar(20),
+	stock int,
+	stock_min int,
+	precio int,
+	precio_venta,
+	demora time,
+);
+
+create table control_horas(
+	fecha date,
+	hora_inicio time,
+	hora_fin time
+);
+
+create table producto_x_vendedor(
+	dni_empleado int,
+	id_producto,
+	fecha_venta
+);	
+
+select * from empleados where year(ingreso) > 1994;
+
+select * from empleados where month(nacimiento) = 10;
+
+select * from empleados where month(nacimiento) = 1 and day(nacimiento) <= 15;
+
+select año as (year(curdate())-year(ingreso) from empleados order by ingreso desc;
+
+selec entrega as (curdate()+demora) from producto where stock <= stock_min;
+
+select * from empleados where dni in (select dni_empleado from producto_x_vendedor order by count(dni_empleado) limit 10);
+
+select empleado.nombre, emoleado.apellido, dni_empleado, count(dni_empleado) from producto_x_vendedor where year(fecha_venta) = 2017 inner join empleado.dni = dni_empleado group by month(fecha_venta);
+
+select producto_x_vendedor.id_producto, count(producto_x_vendedor.id_producto), producto.descripcion from producto_x_vendedor where year(fecha_venta) = 2017 inner join producto on producto.id_producto = producto_x_vendedor.id_producto order by month(fecha_venta);
+
+select (concat(nombre, apellido)) as nombre_empleado from empleado;
+
+update table set descripcion = 'tv' here descripcion = 'televisor';
+
+update table set descripcion = trim(descripcion) where descripcion like '% ' and descripcion like ' %';
+
+select nombre, apellido (select infull(hijos, 'no tiene') from empleados; 
+
+select id_producto, (select if(precio<3000, "barato")), select( if(precio<6000, "caro"), (select if(precio>6000, "muy caro")) from producto; 
+
+select nombre, apellido, sueldo_neto(select if(sueldo_neto<15000, "bajo")), (select if(sueldo_neto<50000, "medio"), (select if(sueldo_neto>50000, "alto")) from producto;
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
